@@ -13,7 +13,11 @@ function cleanGrid() {
 };
 
 function newGrid() {
-	var n = prompt("How many boxes per side?");
+	var n = prompt("How many boxes per side? (64 max)");
+	if (n > 64) {
+		n = 64;
+		alert("You entered higher than 64\nTo save your poor computer from suffering\nThe grid will be set to 64x64");
+	}
 	cleanGrid();
 	createGrid(n);
 };
